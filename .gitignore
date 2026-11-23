@@ -1,0 +1,32 @@
+# 构建产物
+build/
+dist/
+*.apk
+*.idsig
+*.apk.ver
+mapping*.txt
+
+# 工具链和本机配置
+.toolchain/
+.signing/
+*.keystore
+*.jks
+local.properties
+
+# 只有自己下载或被 .gitignore 的闭源组件
+app/libs/Live2DCubismCore.jar
+app/src/main/jniLibs/**/libLive2DCubismCoreJNI.so
+
+# 日志和临时文件
+*.log
+hs_err_pid*
+replay_pid*
+*.tmp
+*.bak
+
+# IDE
+.idea/
+.vscode/
+.gradle/
+.gradle-cache/
+</content>

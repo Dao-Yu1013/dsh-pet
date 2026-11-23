@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DSH 桌宠</string>
+    <string name="a11y_label">DSH 广告跳过与情境感知</string>
+    <string name="a11y_desc">用于识别屏幕上的「跳过/关闭广告」按钮并自动点击，同时读取当前页面文字作为桌宠的情境感知。不会上传原始截图。</string>
+    <string name="channel_name">桌宠常驻</string>
+    <string name="notif_title">桌宠正在陪着你</string>
+    <string name="notif_text">点这里打开 S-G 控制台</string>
+</resources>

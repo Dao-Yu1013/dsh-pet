@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#07090F">
+<title>DSH PET</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="aurora">
+  <span class="a1"></span><span class="a2"></span><span class="a3"></span>
+  <div class="grain"></div>
+</div>
+
+<div id="app">
+  <header id="top">
+    <div class="brand"><i></i>DSH <em>PET</em></div>
+    <div class="top-right">
+      <button class="chip" id="chipBalance" data-act="balance">文本余额 --</button>
+      <button class="chip" id="chipBalanceVision" data-act="balVision">视觉余额 --</button>
+      <button class="icon-btn" data-act="reload" title="刷新">
+        <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-.6 3M20 4v7h-7"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <nav id="nav">
+    <button data-tab="home" class="active">
+      <svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>
+      <span>首页</span>
+    </button>
+    <button data-tab="chat">
+      <svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>
+      <span>聊天</span>
+    </button>
+    <button data-tab="actions">
+      <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
+      <span>动作</span>
+    </button>
+    <button data-tab="companion">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg>
+      <span>陪伴</span>
+    </button>
+    <button data-tab="settings">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.3 1a7 7 0 0 0-1.7-1L14.5 3h-4l-.4 2.1a7 7 0 0 0-1.7 1l-2.3-1-2 3.4L6 11a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 1.7 1l.4 2.1h4l.4-2.1a7 7 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5a7 7 0 0 0 .1-1z"/></svg>
+      <span>设置</span>
+    </button>
+  </nav>
+</div>
+
+<div id="toast"></div>
+<div id="modal" class="hidden">
+  <div class="modal-dim" data-act="closeModal"></div>
+  <div class="modal-card" id="modalCard"></div>
+</div>
+<div id="boot">
+  <div class="boot-orb"><img src="file:///android_asset/webp/a032.webp" alt=""></div>
+  <div class="boot-text">正在唤醒桌宠<span class="dots"><i></i><i></i><i></i></span></div>
+</div>
+
+<!-- 识海使用本地 Three.js 批量绘制 3D 节点；开屏星流复用本地素材脚本。 -->
+<script src="vendor/oss-starfield-opening.js"></script>
+<script src="vendor/three.min.js"></script>
+<script src="memory-graph.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

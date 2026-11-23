@@ -1,0 +1,6 @@
+name: astrbot_plugin_dsh_mobile
+display_name: DSH 手机本地工具桥
+desc: 仅在 DSH 发起的一轮聊天中，将固定手机操作请求交给 Android 本地确认与执行。
+version: 1.0.0
+author: DSH
+astrbot_version: ">=4.18,<5"

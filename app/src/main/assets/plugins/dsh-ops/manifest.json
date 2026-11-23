@@ -1,0 +1,18 @@
+{
+  "id": "dsh-ops",
+  "name": "dsh-ops 省 Token",
+  "version": "0.2.9",
+  "author": "DSH",
+  "description": "省白饭插件：先结论后步骤、代码直出、长文压缩，帮鱼片把每次对话的 token 压到最低。",
+  "quick": [
+    {"id": "brief", "title": "极简回答", "prompt": "请用不超过 80 字回答：先给结论，再给必要步骤，不要客套和重复。"},
+    {"id": "code", "title": "只给代码", "prompt": "只输出可直接使用的代码和一句必要说明，不要解释过程。"},
+    {"id": "digest", "title": "压缩摘要", "prompt": "把下面的内容压缩成 3 条要点，每条不超过 20 字，保留关键数字与结论。"}
+  ],
+  "rules": [
+    {"keywords": ["省token", "省 token", "省白饭", "简洁点", "短一点"], "line": "收到～鱼片要省白饭，我就只说重点。🐳", "type": "plugin"}
+  ],
+  "actions": [
+    {"slug": "a009", "line": "白饭要省着吃，token 也是。"}
+  ]
+}

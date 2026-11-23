@@ -1,0 +1,87 @@
+Third-party notices
+====================
+
+3d-force-graph v1.80.0
+Copyright (c) 2017 Vasco Asturiano
+License: MIT
+
+The DSH PET assets include the minified browser distribution of 3d-force-graph.
+The complete MIT license text is in 3d-force-graph-MIT.txt in this directory.
+The upstream package bundles its runtime dependencies into that distribution;
+their source and license information is available from the package metadata and
+the respective upstream projects:
+
+- accessor-fn: https://github.com/vasturiano/accessor-fn
+- kapsule: https://github.com/vasturiano/kapsule
+- three: https://github.com/mrdoob/three.js
+- three-forcegraph: https://github.com/vasturiano/3d-force-graph
+- three-render-objects: https://github.com/vasturiano/three-render-objects
+
+This notice identifies bundled components. Consult each upstream project for
+its current license text and attribution requirements.
+
+Additional sources used by the DSH PET memory ocean
+===================================================
+
+@mnemoverse/memory-viz 0.2.0
+Copyright (c) 2024-2026 Eduard Izgorodin / Mnemoverse; MIT
+Source: https://github.com/mnemoverse/mnemoverse-memory-viz
+Adapted: point-cloud node distribution, soft point falloff, per-node color and
+importance mapping. The React component and its dependencies are not bundled.
+License text: mnemoverse-memory-viz-MIT.txt
+
+threejs-galaxy-shader
+Copyright (c) 2025 Amit Digga; MIT
+Source: https://github.com/AmitDigga/threejs-galaxy-shader
+Adapted: spiral-arm point placement and galaxy depth distribution.
+License text: AmitDigga-threejs-galaxy-shader-MIT.txt
+
+cosmic-nebula
+Copyright (c) 2026 John Mike; MIT
+Source: https://github.com/mikeascendx/cosmic-nebula
+Adapted: mobile particle budgeting, nebula/aurora palette, particle life
+behavior, and the text-free crop used as the local opening background. The
+Next.js application is not bundled.
+License text: mikeascendx-cosmic-nebula-MIT.txt
+
+starfield-animation
+Copyright (c) 2025 Lee Sykes; MIT
+Source: https://github.com/leesykes/starfield-animation
+Adapted: radial starfield motion and perspective expansion used by the memory
+ocean's opening animation. The original preview GIF is static and is not used.
+License text: leesykes-starfield-animation-MIT.txt
+
+dsh-video-skin
+Copyright (c) 2026 Something11235; MIT
+Source: https://github.com/Something11235/dsh-video-skin
+Bundled asset: ui/videos/dsh-video-skin-boot.mp4 (upstream assets/boot.mp4),
+used as a muted, looping Android memory-ocean opening while local records load.
+The desktop DSH plugin code, background video, and UI controls are not bundled.
+License text: dsh-video-skin-MIT.txt
+
+three-nebula 13.3.0
+Copyright (c) 2018 a-jie and rohan-deshpande; MIT
+Source: https://github.com/creativelifeform/three-nebula
+Adapted: particle lifetime, velocity, color and alpha/scale interpolation
+principles in the GPU particle shader. The particle engine is not bundled.
+License text: three-nebula-MIT.txt
+
+three.js 0.147.0
+Copyright (c) 2010-2022 three.js authors; MIT
+Source: https://github.com/mrdoob/three.js
+Bundled: the minified UMD build (ui/vendor/three.min.js) providing
+window.THREE, plus the examples/js post-processing chain
+(CopyShader, LuminosityHighPassShader, Pass, UnrealBloomPass) concatenated
+into ui/vendor/oss-unreal-bloom-pass.js for the memory ocean bloom effect.
+Original sources archived under third_party/oss-sources/three-0.147.0/.
+License text: https://github.com/mrdoob/three.js/blob/r147/LICENSE
+
+dsh-cold-boot
+Copyright (c) zzbkl; MIT
+Source: https://github.com/zzbkl/dsh-cold-boot
+Adapted: pure CSS/DOM HUD opening techniques only (scanline sweep, corner
+frame brackets, phased status display, reduced-motion behavior),
+re-implemented in ui/app.css and ui/app.js for the memory ocean boot
+animation. No original assets are bundled; the repository's trademark
+imagery is explicitly NOT used. Original source archived under
+third_party/oss-sources/dsh-cold-boot/ for license reference only.

@@ -1,0 +1,5 @@
+Android D8 runtime bundled for on-device Java-to-DEX plugin compilation.
+Artifact: com.android.tools:r8:8.0.34
+Source: https://dl.google.com/dl/android/maven2/com/android/tools/r8/8.0.34/r8-8.0.34.jar
+License: Apache License 2.0; see R8-LICENSE-2.0.txt.
+This older runtime avoids Java APIs unavailable on Android 9 (API 28).
