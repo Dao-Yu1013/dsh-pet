@@ -34,3 +34,5 @@ replay_pid*
 # Python 缓存
 __pycache__/
 *.pyc
+
+.release.json
