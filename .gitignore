@@ -30,3 +30,7 @@ replay_pid*
 .gradle/
 .gradle-cache/
 </content>
+
+# Python 缓存
+__pycache__/
+*.pyc
