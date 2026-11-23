@@ -1,0 +1,32 @@
+name: 合并 APK 分卷
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  join:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 下载分卷
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p parts
+          gh release download v2.6.2 --repo "$GITHUB_REPOSITORY" --pattern '*.apk.part*' --dir parts
+          ls -l parts
+
+      - name: 拼接并校验 SHA-256
+        run: |
+          cd parts
+          ls *.apk.part* | sort | xargs cat > ../dsh-pet-v2.6.2-v108.apk
+          cd ..
+          ls -l dsh-pet-v2.6.2-v108.apk
+          echo "b7b4a4786edc73bb5c11b3996e1ce3334941719c92caec4819c69c3d6e94dec0  dsh-pet-v2.6.2-v108.apk" | sha256sum -c -
+
+      - name: 上传整包
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload v2.6.2 dsh-pet-v2.6.2-v108.apk --repo "$GITHUB_REPOSITORY" --clobber

@@ -55,7 +55,7 @@
 
 ## 装上试试
 
-1. 仓库里暂时没有放成品 APK，按 [docs/构建.md](docs/构建.md) 自己编译一个。
+1. 成品在 [Releases](../../releases) 里，`v2.6.2` 打包时按 20MB 切成十卷（`*.apk.part01` ~ `part10`，单次上传顶不住整包）。全部下到同一个文件夹，跑一次 [tools/join-apk-parts.ps1](tools/join-apk-parts.ps1) 合回完整的 apk，脚本会顺手核对 SHA-256。不想下分卷就按 [docs/构建.md](docs/构建.md) 自己编译一个。
 2. 装好后先给悬浮窗权限，再点首页的"放出来"，她才会出现在桌面上。
 3. 去设置里填模型接口。OpenAI 兼容地址一般形如 `https://api.xxx.com/v1`，模型名按服务商写的填。
 4. 首页会提示还差哪几项设置，点进去逐项补。
