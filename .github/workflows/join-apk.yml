@@ -2,6 +2,19 @@ name: 合并 APK 分卷
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Release 标签
+        required: true
+        default: v2.6.2
+      name:
+        description: 合并后的文件名
+        required: true
+        default: dsh-pet-v2.6.2-v108.apk
+      sha256:
+        description: 整包的 SHA-256，留空只拼接不校验
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -9,24 +22,28 @@ permissions:
 jobs:
   join:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TAG: ${{ inputs.tag }}
+      APK: ${{ inputs.name }}
+      SHA: ${{ inputs.sha256 }}
     steps:
       - name: 下载分卷
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           mkdir -p parts
-          gh release download v2.6.2 --repo "$GITHUB_REPOSITORY" --pattern '*.apk.part*' --dir parts
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern '*.apk.part*' --dir parts
           ls -l parts
 
-      - name: 拼接并校验 SHA-256
+      - name: 拼接
         run: |
           cd parts
-          ls *.apk.part* | sort | xargs cat > ../dsh-pet-v2.6.2-v108.apk
+          ls *.apk.part* | sort | xargs cat > "../$APK"
           cd ..
-          ls -l dsh-pet-v2.6.2-v108.apk
-          echo "b7b4a4786edc73bb5c11b3996e1ce3334941719c92caec4819c69c3d6e94dec0  dsh-pet-v2.6.2-v108.apk" | sha256sum -c -
+          ls -l "$APK"
+
+      - name: 校验 SHA-256
+        if: env.SHA != ''
+        run: echo "$SHA  $APK" | sha256sum -c -
 
       - name: 上传整包
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release upload v2.6.2 dsh-pet-v2.6.2-v108.apk --repo "$GITHUB_REPOSITORY" --clobber
+        run: gh release upload "$TAG" "$APK" --repo "$GITHUB_REPOSITORY" --clobber
